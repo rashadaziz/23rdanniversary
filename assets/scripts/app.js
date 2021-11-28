@@ -1,6 +1,3 @@
-import interact from "https://cdn.interactjs.io/v1.10.11/interactjs/index.js";
-import LeaderLine from "https://cdn.jsdelivr.net/gh/rashadaziz/Logic-Simulator/dependencies/leader-line.min.js";
-
 class Typing {
     words = ["23rd", "Wedding", "Anniversary"]
     wordIndex = 0
