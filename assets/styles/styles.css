@@ -167,7 +167,7 @@ table {
 @keyframes AnimateBg {
     0% {
         transform: translateY(2000px);
-        background: url("https://legoman8304.github.io/assets/images/picture.jpg") no-repeat;
+        background: url("https://cdn.jsdelivr.net/gh/rashadaziz/23rdanniversary/assets/images/picture.jpg") no-repeat;
         background-position: center;
         background-size: cover;
         background-attachment: fixed;
