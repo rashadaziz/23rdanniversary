@@ -35,7 +35,10 @@ function drawImage() {
     showModal()
 }
 function showModal() {
-    document.body.innerHTML += "<div class='mycard'><h1 class='heart'>&hearts;</h1><p class='quote'>“Our anniversary is just a momentary celebration, but our marriage is a timeless one.” -Unknown</p></div>"
+    document.body.innerHTML += "<div class='mycard'><h1 class='heart'>&hearts;</h1><p class='quote'>“Our anniversary is just a momentary celebration, but our marriage is a timeless one.” -Unknown</p><a href='javascript:void(0)' class='btn btn-danger' style='letter-spacing: 5px; margin-top:50px;'>Click Me Again</a></div>"
+    document.querySelector(".mycard a").addEventListener("click", () => {
+        document.querySelector(".animation-area").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+    })
 }
 
 function main() {
@@ -50,6 +53,16 @@ function main() {
     setInterval(() => {
         typer.type()
     }, 100);
+    document.querySelectorAll(".box-area li").forEach(
+        (element) => {
+            element.style.left = `${Math.floor(Math.random()*90)+1}%`
+            element.style.fontSize = `${Math.floor(Math.random()*400) + 1}px`
+            element.style.animationDelay = `${Math.floor(Math.random()*3) + 1}s`
+        }
+    ) 
+    
+   
+
 }
 
 
