@@ -106,6 +106,7 @@ body {
   line-height: 1;
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 ol,
 ul {
@@ -136,7 +137,7 @@ table {
   align-items: flex-start;
   padding-left: 5%;
 }
-.container {
+.mycontainer {
   width: 60%;
 }
 .dynamic-text,
@@ -150,7 +151,36 @@ table {
   color: #ca3333;
 }
 .section {
-  height: 100vh;
+ height: 100vh;
+ width: 100vw;
+ overflow: hidden;
+ display: flex;
+ flex-wrap: wrap;
+}
+.section .blocks {
+    position:  relative;
+    display: block;
+    width: 5vw;
+    height: 5vw;
+    animation: AnimateBg 0.5s ease-in-out forwards;
+}
+
+@keyframes AnimateBg {
+    0% {
+        transform: translateY(2000px);
+        background: url('../images/picture.jpg') no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        box-shadow: 0 5 15px rgba(0,0,0,0.5);
+    }
+    100% {
+        transform: translateY(0px);
+        background: url('../images/picture.jpg') no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -225,4 +255,32 @@ body {
   transform: scale(0) rotatey(360deg);
   left: -100%;
   opacity: 0;
+}
+.mycard {
+    text-align: center;
+    padding: 20px;
+  width: 25%;
+  height: 40%;
+  position: absolute;
+  top: 130%;
+  left: 38%;
+  animation: fadein 2s ease-in-out forwards;
+  border-radius: 30px;
+  background-color: rgb(214, 214, 214);
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.heart {
+    font-size: 4rem;
+    color: red;
+}
+.quote {
+    font-size: 1.5rem;
+    color: white;
 }

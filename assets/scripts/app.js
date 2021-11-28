@@ -23,10 +23,26 @@ class Typing {
         }
     }
 }
+function drawImage() {
+    const bg = document.getElementsByClassName('section')[0]
+    bg.innerHTML = ""
+    for (let i = 0; i < 500; i++) {
+        const blocks = document.getElementsByClassName('blocks');
+        bg.innerHTML += '<div class="blocks"></div>';
+        const duration = Math.floor(Math.random() * 5);
+        blocks[i].style.animationDuration = `${2+duration}s`
+    }
+    showModal()
+}
+function showModal() {
+    document.body.innerHTML += "<div class='mycard'><h1 class='heart'>&hearts;</h1><p class='quote'>“Our anniversary is just a momentary celebration, but our marriage is a timeless one.” -Unknown</p></div>"
+}
 
 function main() {
     let clickme = document.querySelector(".clickme")
     clickme.addEventListener("click", (e) => {
+        document.body.style.overflowY = "scroll"
+        drawImage()
         document.querySelector(".section").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
     })
 
@@ -34,8 +50,6 @@ function main() {
     setInterval(() => {
         typer.type()
     }, 100);
-
-
 }
 
 
